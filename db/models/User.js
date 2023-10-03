@@ -3,6 +3,7 @@ import mongoose, { Types } from "mongoose";
 const { Schema, model, models } = mongoose;
 
 const userSchema = new Schema({
+	email: { type: String, required: true, unique: true },
 	username: { type: String, required: true, unique: true },
 	password: { type: String, required: true },
 	sourceIds: [{ type: Types.ObjectId, required: true, ref: "Source" }],
