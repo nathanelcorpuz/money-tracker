@@ -6,7 +6,7 @@ export default function Input({ label, name, type }) {
 				id={name}
 				name={name}
 				className="border rounded p-2 bg-slate-50"
-				type={type}
+				type={type || "text"}
 			/>
 		</div>
 	);

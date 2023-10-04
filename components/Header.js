@@ -17,6 +17,11 @@ export default function Header() {
 			</div>
 			<menu className="flex flex-col gap-4">
 				<li>
+					<Link onClick={handleMenuToggle} href="/register">
+						Register
+					</Link>
+				</li>
+				<li>
 					<Link onClick={handleMenuToggle} href="/">
 						home
 					</Link>
