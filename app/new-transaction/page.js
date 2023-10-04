@@ -1,45 +1,29 @@
+import Button from "@/components/common/Button";
+import Input from "@/components/common/Input";
+import Select from "@/components/common/Select";
+
 export default function NewTransaction() {
+	const sourceOptions = [
+		{
+			value: "gcash",
+			label: "GCash",
+		},
+		{
+			value: "cash",
+			label: "Cash",
+		},
+		{
+			value: "bdo",
+			label: "BDO",
+		},
+	];
 	return (
 		<main>
 			<form className="p-2 flex flex-col gap-8">
-				<div className="flex flex-col">
-					<label for="date">Date</label>
-					<input
-						id="date"
-						name="date"
-						className="border rounded p-2 bg-slate-50"
-						type="date"
-					/>
-				</div>
-				<div className="flex flex-col">
-					<label for="source">Source</label>
-					<select
-						className="border rounded p-2 bg-slate-50"
-						name="source"
-						id="source"
-					>
-						<option value="gcash">GCash</option>
-						<option value="cash">Cash</option>
-						<option value="BDO">BDO</option>
-					</select>
-				</div>
-				<div className="flex flex-col">
-					<label for="name">Name</label>
-					<input
-						id="name"
-						name="name"
-						className="border rounded p-2 bg-slate-50"
-					/>
-				</div>
-				<div className="flex flex-col">
-					<label for="amount">Amount</label>
-					<input
-						className="border rounded p-2 bg-slate-50"
-						id="amount"
-						name="amount"
-						type="number"
-					/>
-				</div>
+				<Input name="date" type="date" label="Date" />
+				<Select label="Source" name="source" options={sourceOptions} />
+				<Input name="name" type="text" label="Name" />
+				<Input name="amount" type="number" label="Number" />
 				<div>
 					<p className="pb-4">Type</p>
 					<div className="flex gap-8">
@@ -53,7 +37,7 @@ export default function NewTransaction() {
 						</div>
 					</div>
 				</div>
-				<button className="bg-black text-white p-3 rounded">Submit</button>
+				<Button>Submit</Button>
 			</form>
 		</main>
 	);
